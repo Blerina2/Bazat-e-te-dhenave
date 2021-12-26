@@ -1,4 +1,4 @@
-create database bazaDhenave;
+# create database bazaDhenave;
 # Krijmi i tabeles Adresa
 create table Adresa(
     ID int NOT NULL AUTO_INCREMENT,
@@ -106,5 +106,39 @@ create table LibratDemtuar
     PRIMARY KEY (ID),
     FOREIGN KEY (LibriId) references Libri(ID),
     FOREIGN KEY (PuntoriId) references Puntor(ID)
+
+);
+
+# Krijimi i tabeles Huazimi
+
+create table Huazimi(
+        ID int NOT NULL AUTO_INCREMENT,
+        LibriiHuazuarId int,
+        LexuesiId int,
+        DataeJepjes date,
+        Kthimi date,
+        Vonesa date,
+        PuntoriId int,
+        Vrejtje varchar(255),
+        PRIMARY KEY (ID),
+        FOREIGN KEY (LibriiHuazuarId) references Libri(ID),
+        FOREIGN KEY (LexuesiId) references Lexuesi(ID),
+        FOREIGN KEY (PuntoriId) references  Puntor(ID)
+
+);
+
+# Krijimi i Tabeles Detajet lexuesi
+
+create table DetajetLexuesi(
+    ID int NOT NULL AUTO_INCREMENT,
+    LexuesiId int,
+    VitiIRegjistrimit date,
+    DataRegjestrimit date,
+    CmimiIRegjistrimit int,
+    PuntoriIRegjistruar varchar(255),
+    Antarsimi boolean,
+    Kushtezimi date,
+    PRIMARY KEY (ID),
+    FOREIGN KEY (LexuesiId) references Lexuesi(ID)
 
 );
