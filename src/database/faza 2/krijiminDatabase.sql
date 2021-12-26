@@ -32,3 +32,40 @@ create table Lexuesi
     FOREIGN KEY (AdresaId) REFERENCES Adresa(ID),
     foreign key (TelefonID) references Telefoni(ID)
 );
+# krijimi i tabeles libri
+create table Libri
+    (
+        ID int NOT NULL AUTO_INCREMENT,
+        Titulli varchar(255),
+        Autori varchar(255),
+        Zhanri varchar(255),
+        NumriIkopjeve int,
+        DataPranimit date,
+        PuntorID int,
+        Primary key (ID),
+        Foreign key (PuntorID) References Puntor(ID)
+);
+# krijimi i tabeles arkiva
+create table Arkiva
+    (
+       ID int NOT NULL AUTO_INCREMENT,
+       LexuesiID int,
+       LibriID int,
+       Primary key (ID),
+       foreign key (LexuesiID) REFERENCES Lexuesi(ID),
+       foreign key (LibriID) REFERENCES Libri(ID)
+);
+# krijimi i tabeles biblioteka
+create table Biblioteka
+(
+    ID int NOT NULL AUTO_INCREMENT,
+    LexuesiID int,
+    PuntorID int,
+    LibriID int,
+    ArkivaID int,
+    Primary key (ID),
+    FOREIGN KEY (LexuesiID) REFERENCES Lexuesi(ID),
+    foreign key (PuntorID) references Puntor(ID),
+    foreign key (LibriID) references Libri(ID),
+    foreign key (ArkivaID) references Arkiva(ID),
+);
