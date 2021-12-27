@@ -15,7 +15,7 @@ create table Telefoni(
   Fix int,
   primary key (ID)
 );
-# krijimin e tabeles lexues
+# krijimin e tabeles lexueslexuesi
 create table Lexuesi
 (
     ID int NOT NULL AUTO_INCREMENT,
