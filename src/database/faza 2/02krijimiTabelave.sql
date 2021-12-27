@@ -1,4 +1,4 @@
-# create database bazaDhenave;
+
 # Krijmi i tabeles Adresa
 create table Adresa(
     ID int NOT NULL AUTO_INCREMENT,

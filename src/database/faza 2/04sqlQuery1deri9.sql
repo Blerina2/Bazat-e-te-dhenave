@@ -28,3 +28,8 @@ from libri l where (l.DataeJepjes>='2019-01-01' and l.DataeJepjes<='2021-12-31')
 select emri , mbiemri , huazim ,zhanri
 from ((bibloteka b inner join lexuesi l on l.ID=b.LexuesiId) inner join libri li on li.Id=b.libriId)
 inner join huazimi h  on h.lexuesId=l.Id where h.vonesa>0;
+# 8. Gjeni top librin me te lexuar per vitin aktual.
+select max(l.sasiaHuazimit) from libri l inner join bibloteka b where l.Id=b.libriId and b.viti=now();
+# 9. Cili eshte autori me i preferuar nga lexuesit?
+select max(l.huazuar), * from liber l;
+
