@@ -1,0 +1,5 @@
+normalizimi 1
+    - It should only have single(atomic) valued attributes/columns => E ploteson
+    - Values stored in a column should be of the same domain => E ploteson
+    - All the columns in a table should have unique names => E ploteson
+    - And the order in which data is stored, does not matter => E ploteson
