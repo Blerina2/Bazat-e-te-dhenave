@@ -1,15 +1,12 @@
 CREATE PROCEDURE SelectAllAdresat
 AS
-BEGIN
-    SELECT *
-    FROM adresa;
-END
-    GO;
+SELECT * FROM adresa;
+GO;
+
 CREATE PROCEDURE SelectAllLibriName
 AS
-    BEGIN
-        SELECT Autori from libri;
-    end;
+SELECT Autori from libri;
+GO;
 
 CREATE FUNCTION EmratAutoreve
 RETURNS int;
