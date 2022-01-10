@@ -3,3 +3,153 @@ normalizimi 1
     - Values stored in a column should be of the same domain => E ploteson
     - All the columns in a table should have unique names => E ploteson
     - And the order in which data is stored, does not matter => E ploteson
+
+
+normalizimi 2
+    -The table should be in the First Normal Form => E ploteson
+    -There should be no Partial Dependency.
+
+    Ndryshimi te tabela adresa
+    create table adresa (
+            ID int auto_increment,
+            Rruga string,
+            VendID int ,
+            CONSTRAINT ID PRIMARY KEY (ID),
+            FOREIGN KEY (VendiID) REFERENCES Vendi(ID)
+
+    );
+
+    create table vendi(
+            ID int auto_increment,
+            Qyteti string ,
+            Shteti string ,
+            KodiPostal int,
+            CONSTRAINT ID PRIMARY KEY (ID)
+    );
+
+    Ndryshimi te tabela detajetlexuesi
+    create table detajetlexuesi (
+            ID int auto_increment NOT NULL ,
+            LexuesiId int ,
+            Antarsimi boolean ,
+            Kushtezimi date,
+            PRIMARY KEY (ID),
+            FOREIGN KEY (LexuesiID) REFERENCES Regjistrimi(ID)
+    );
+
+    create table Regjistrimi(
+            ID int auto_increment NOT NULL ,
+            VitiiRegjistrimit date,
+            DataRegjestrimit date,
+            CmimiIRegjestrimit int,
+            PuntoriiRegjistruar varchar,
+            CONSTRAINT ID PRIMARY KEY (ID)
+    );
+
+   create table huazimi(
+        ID int auto_increment NOT NULL ,
+        LibriiHuazuarId int ,
+        LexuesiId int ,
+        Vrejtje varchar,
+        kohaembajtjesId int,
+        PuntoriId int,
+        PRIMARY KEY (ID),
+        FOREIGN KEY (kohaembajtjesID) REFERENCES kohaembajtjes(ID)
+   );
+
+   create table kohaembajtjes(
+            ID int auto_increment NOT NULL ,
+            DataeJepjes date,
+            Kthimi date,
+            Vonesa date,
+            CONSTRAINT ID PRIMARY KEY (ID)
+   );
+
+
+   create table Lexuesi(
+        ID int auto_increment NOT NULL ,
+        Emri varchar ,
+        Mbiemri varchar ,
+        EmriiPrindit varchar ,
+        Gjinia varchar,
+        DataeLindjes date,
+        AdresaId int ,
+        TelefonID int,
+        Email varchar ,
+        ProfesioniId int,
+        PRIMARY KEY (ID),
+        FOREIGN KEY (ProfesioniID) REFERENCES Profesioni(ID)
+   );
+
+
+  create table Profesioni (
+        ID int auto_increment NOT NULL ,
+        Profesioni string,
+        CONSTRAINT ID PRIMARY KEY (ID)
+  );
+
+
+  create table libratdemtuar (
+        ID int auto_increment NOT NULL ,
+        LibriId int,
+        PuntoriId int,
+        GjendjaLibritId int,
+        PRIMARY KEY (ID),
+        FOREIGN KEY (GjendjaLibritID) REFERENCES GjendjaLibrit(ID)
+        );
+
+   create table GjendjaLibrit(
+        ID int auto_increment NOT NULL ,
+        GjendjaLibrit string,
+        DataRegjistrimit date,
+        CONSTRAINT ID PRIMARY KEY (ID)
+   );
+
+
+   create table libri(
+        ID int auto_increment NOT NULL ,
+        Titulli varchar ,
+        Autori varchar,
+        ZhanriId int ,
+        NumriIkopjeve int,
+        DataPranimit date ,
+        PuntorID int,
+        PRIMARY KEY (ID),
+        FOREIGN KEY (ZhanriID) REFERENCES Zhanri(ID)
+   );
+
+   create table Zhanri(
+         ID int auto_increment NOT NULL ,
+         Zhanri varchar ,
+         CONSTRAINT ID PRIMARY KEY (ID)
+   );
+
+
+   create table paga (
+        ID int auto_increment NOT NULL ,
+        ProfesioniId int,
+        rroga varchar,
+        PRIMARY KEY (ID),
+        FOREIGN KEY (ProfesioniID) REFERENCES Profesioni(ID)
+  );
+
+
+  create table puntor(
+        ID int auto_increment NOT NULL ,
+        Emri varchar ,
+        Mbiemri varchar,
+        AdresaId int ,
+        TelefoniId int ,
+        Email varchar,
+        PagaId int ,
+        PRIMARY KEY (ID),
+        FOREIGN KEY (PagaID) REFERENCES Paga(ID)
+   );
+
+
+normalizimi 3
+        -It should be in the Second Normal form => E plotesuar
+        -And it should not have Transitive Dependency.
+
+
+
