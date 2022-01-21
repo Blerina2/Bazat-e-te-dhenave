@@ -29,7 +29,7 @@ VALUES ('Albin','Kurti',' Zaim ','M','1975-03-24',5,5,'AlbinKurtiLotus@hotmail.c
 # Insertimi i te dhenave ne abelen  Detajet e lexuesit
 
 insert into detajetlexuesi ( LexuesiId, VitiIRegjistrimit, DataRegjestrimit, CmimiIRegjistrimit, PuntoriIRegjistruar, Antarsimi, Kushtezimi)
-VALUES(6,'2022-01-14','2022-01-14',5,'Halil',15,'2023-02-22') ;
+VALUES(4,'2022-01-14','2022-01-14',5,'Halil',15,'2023-02-22') ;
 insert into detajetlexuesi ( LexuesiId, VitiIRegjistrimit, DataRegjestrimit, CmimiIRegjistrimit, PuntoriIRegjistruar, Antarsimi, Kushtezimi)
 VALUES(5,'2012-01-14','2012-01-14',2,'Naxhi',10,'2025-12-12') ;
 insert into detajetlexuesi ( LexuesiId, VitiIRegjistrimit, DataRegjestrimit, CmimiIRegjistrimit, PuntoriIRegjistruar, Antarsimi, Kushtezimi)
@@ -71,16 +71,16 @@ VALUES('Idea', 'Rexhepi', 5, 5, 'Idearexhepi1@gmail.com', 5);
 
 # Insertimi i te dhenave ne Tabelen libri
 
-insert into libri (Titulli, Autori, Zhanri, NumriIKopjeve, DataPranimit, Puntorid)
-VALUES('Programimi ne C++', 'Blerim Bytyci', 'Mesimor', 1,'2020-02-13',1);
-insert into libri (Titulli, Autori, Zhanri, NumriIKopjeve, DataPranimit, PuntorId)
-VALUES('Programimi ne JavaScript', 'Naim Ternava', 'Mesimor', 2,'2019-05-19',2);
-insert into libri (Titulli, Autori, Zhanri, NumriIKopjeve, DataPranimit, PuntorId)
-VALUES('Programimi ne Python', 'Shemsedin Gashi', 'Mesimor', 3,'2020-07-21',3);
-insert into libri (Titulli, Autori, Zhanri, NumriIKopjeve, DataPranimit, PuntorId)
-VALUES('Programimi ne Html', 'Labinot Rexha', 'Mesimor', 4,'2018-01-25',4);
-insert into libri (Titulli, Autori, Zhanri, NumriIKopjeve, DataPranimit, PuntorId)
-VALUES('Programimi ne mySql', 'Fisnik Rexhepi', 'Mesimor', 5,'2021-05-10',5);
+insert into libri (Titulli, Autori, Zhanri, NumriIKopjeve, DataPranimit, Puntorid,qmimi)
+VALUES('Programimi ne C++', 'Blerim Bytyci', 'Mesimor', 1,'2020-02-13',1,50);
+insert into libri (Titulli, Autori, Zhanri, NumriIKopjeve, DataPranimit, PuntorId,qmimi)
+VALUES('Programimi ne JavaScript', 'Naim Ternava', 'Mesimor', 2,'2019-05-19',2,20);
+insert into libri (Titulli, Autori, Zhanri, NumriIKopjeve, DataPranimit, PuntorId,qmimi)
+VALUES('Programimi ne Python', 'Shemsedin Gashi', 'Mesimor', 3,'2020-07-21',3,28);
+insert into libri (Titulli, Autori, Zhanri, NumriIKopjeve, DataPranimit, PuntorId,qmimi)
+VALUES('Programimi ne Html', 'Labinot Rexha', 'Mesimor', 4,'2018-01-25',4,16);
+insert into libri (Titulli, Autori, Zhanri, NumriIKopjeve, DataPranimit, PuntorId,qmimi)
+VALUES('Programimi ne mySql', 'Fisnik Rexhepi', 'Mesimor', 5,'2021-05-10',5,78);
 
 
 
@@ -126,16 +126,16 @@ VALUES (5, 5, '2021-07-02', '2021-07-18', '2021-07-18', 5, 'Librit i mungon kope
 
 #insertimi i te dhenave ne tabelen Biblioteka
 
-insert into biblioteka ( LexuesiID, PuntorID, LibriID, ArkivaID)
-VALUES (1, 1, 1, 1 );
-insert into biblioteka ( LexuesiID, PuntorID, LibriID, ArkivaID)
-VALUES (2, 2, 2, 2 );
-insert into biblioteka ( LexuesiID, PuntorID, LibriID, ArkivaID)
-VALUES (3, 3, 3, 3 );
-insert into biblioteka ( LexuesiID, PuntorID, LibriID, ArkivaID)
-VALUES (4, 4, 4, 4 );
-insert into biblioteka ( LexuesiID, PuntorID, LibriID, ArkivaID)
-VALUES (5, 5, 5, 5 );
+insert into biblioteka ( LexuesiID, PuntorID, LibriID, ArkivaID,viti)
+VALUES (1, 1, 1, 1 ,'2020-07-01');
+insert into biblioteka ( LexuesiID, PuntorID, LibriID, ArkivaID,viti)
+VALUES (2, 2, 2, 2 ,'2021-05-06');
+insert into biblioteka ( LexuesiID, PuntorID, LibriID, ArkivaID,viti)
+VALUES (3, 3, 3, 3 ,'2020-02-05');
+insert into biblioteka ( LexuesiID, PuntorID, LibriID, ArkivaID,viti)
+VALUES (4, 4, 4, 4 ,'2021-12-31');
+insert into biblioteka ( LexuesiID, PuntorID, LibriID, ArkivaID,viti)
+VALUES (5, 5, 5, 5 ,'2021-11-22');
 
 
 

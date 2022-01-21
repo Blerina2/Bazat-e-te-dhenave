@@ -56,7 +56,6 @@ create table Puntor
         FOREIGN KEY (TelefoniId) REFERENCES Telefoni(ID),
         FOREIGN KEY (PagaId) REFERENCES Paga(ID)
 );
-
 # krijimi i tabeles libri
 create table Libri
     (
@@ -66,6 +65,7 @@ create table Libri
         Zhanri varchar(255),
         NumriIkopjeve int,
         DataPranimit date,
+        qmimi int,
         PuntorID int,
         Primary key (ID),
         Foreign key (PuntorID) References Puntor(ID)
@@ -80,6 +80,7 @@ create table Arkiva
        foreign key (LexuesiID) REFERENCES Lexuesi(ID),
        foreign key (LibriID) REFERENCES Libri(ID)
 );
+
 # krijimi i tabeles biblioteka
 create table Biblioteka
 (
@@ -88,6 +89,7 @@ create table Biblioteka
     PuntorID int,
     LibriID int,
     ArkivaID int,
+    viti date,
     Primary key (ID),
     FOREIGN KEY (LexuesiID) REFERENCES Lexuesi(ID),
     foreign key (PuntorID) references Puntor(ID),
